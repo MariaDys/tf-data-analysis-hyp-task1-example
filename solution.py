@@ -11,6 +11,6 @@ def solution(x_success: int,
     p1 = x_success/x_cnt #конверсия контроля
     p2 = y_success/y_cnt #конверсия теста
     p = (x_success+y_success)/(x_cnt + y_cnt) #общая конверсия
-    z = (p1-p2)/sqrt(p*(1-p)*(1/x_cnt + 1/y_cnt))
+    z = (p1-p2)/np.sqrt(p*(1-p)*(1/x_cnt + 1/y_cnt))
     p_value = 2 * norm.sf(abs(z))
     return p_value < 0.06 # H0 отвергается (1) или не отвергается (0)
